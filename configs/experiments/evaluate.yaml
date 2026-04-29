@@ -1,0 +1,50 @@
+# Evaluation Configuration for ReaLM-Retrieve
+# SIGIR 2026
+
+defaults:
+  - _self_
+
+# Dataset selection
+dataset: musique  # musique, hotpotqa, 2wikimhqa
+
+# Model checkpoints
+model:
+  segmentation_checkpoint: checkpoints/segmentation/best_model
+  policy_checkpoint: checkpoints/policy/best_model.pt
+  reasoning_model_type: deepseek  # deepseek, qwq, openai
+  reasoning_model_name: deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+  tensor_parallel_size: 8
+
+# Retrieval configuration
+retrieval:
+  checkpoint: colbert-ir/colbertv2.0
+  index_path: data/indices/colbert/${dataset}.plaid
+  k: 5
+
+# RSUS configuration
+rsus:
+  alpha: 0.4
+  beta: 0.35
+  gamma: 0.25
+
+# Policy configuration
+policy:
+  threshold: 0.65
+
+# Data paths
+data:
+  test_path: data/processed/${dataset}/test.jsonl
+
+# Evaluation settings
+eval:
+  max_examples: null  # null = all
+  compute_retrieval_quality: true
+  save_predictions: true
+
+# Output
+output_dir: outputs/results
+
+# Logging
+logging:
+  use_wandb: false
+  log_level: INFO
