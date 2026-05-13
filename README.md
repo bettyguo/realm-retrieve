@@ -75,7 +75,7 @@ All improvements statistically significant at p < 0.01 (paired bootstrap, 10K it
 
 ```bash
 # Clone repository
-git clone https://anonymous.4open.science/r/realm-retrieve.git
+git clone https://github.com/bettyguo/realm-retrieve.git
 cd realm-retrieve
 
 # Install dependencies
@@ -281,7 +281,7 @@ rsus:
 
 ```
 realm-retrieve/
-├── src/realm_retrieve/          # Main source code
+├── src/
 │   ├── models/                  # Model implementations
 │   │   ├── segmentation.py      # Step boundary classifier
 │   │   ├── rsus.py              # RSUS computation
