@@ -1,0 +1,39 @@
+# =============================================================================
+# CODEOWNERS for bettyguo/realm-retrieve
+# =============================================================================
+# Reviews are routed automatically when a PR touches matching paths. Patterns
+# are evaluated in order — later entries win, so put broad rules first and
+# tighten with specifics below. See
+# https://docs.github.com/articles/about-code-owners.
+# =============================================================================
+
+# Catch-all — both lead authors are tagged on every PR by default.
+*                                       @bettyguo
+
+# Research-critical algorithm modules — both authors must approve.
+src/realm_retrieve/models/policy.py          @bettyguo
+src/realm_retrieve/models/rsus.py            @bettyguo
+src/realm_retrieve/models/segmentation.py    @bettyguo
+
+# Retrieval / inference adapters.
+src/realm_retrieve/models/retriever.py       @bettyguo
+src/realm_retrieve/models/reasoning_model.py @bettyguo
+
+# Evaluation + statistical-significance code.
+src/realm_retrieve/evaluation/               @bettyguo
+
+# Build, CI, packaging — devops-flavoured changes.
+/.github/                                @bettyguo
+/pyproject.toml                          @bettyguo
+/Makefile                                @bettyguo
+/requirements*.txt                       @bettyguo
+/scripts/                                @bettyguo
+
+# Documentation — lighter review bar, single approval is fine.
+/README.md                               @bettyguo
+/docs/                                   @bettyguo
+/CHANGELOG.md                            @bettyguo
+
+# The SIGIR camera-ready manuscript is frozen — changes require the
+# corresponding author's explicit sign-off.
+/paper/                                  @bettyguo
