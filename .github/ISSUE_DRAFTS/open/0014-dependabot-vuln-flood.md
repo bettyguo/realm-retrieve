@@ -1,6 +1,6 @@
 ---
 title:    "chore(security): triage Dependabot's 85 flagged vulnerabilities (10 critical)"
-labels:   ["security", "dependencies", "help wanted"]
+labels:   ["dependencies", "help wanted"]
 milestone: "v1.1"
 state:    open
 opened:   "2026-05-14"
