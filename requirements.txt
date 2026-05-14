@@ -82,7 +82,7 @@ tqdm==4.66.2
 python-dotenv==1.0.1
 click==8.1.7
 jsonlines==4.0.0
-requests==2.31.0
+requests==2.34.1
 aiohttp==3.9.3
 httpx==0.26.0
 
