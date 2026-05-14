@@ -1,0 +1,74 @@
+name: 🐛 Bug report
+description: Something is broken or behaves unexpectedly.
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug report! The more concrete
+        the repro, the faster we can fix it.
+  - type: checkboxes
+    id: prereqs
+    attributes:
+      label: Pre-flight checklist
+      options:
+        - label: I have searched existing issues and this is not a duplicate.
+          required: true
+        - label: I am on the latest `main` (or have noted the version below).
+          required: true
+  - type: input
+    id: version
+    attributes:
+      label: ReaLM-Retrieve version / commit
+      placeholder: "v1.0.0  or  commit abc1234"
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: How did you install?
+      options:
+        - "pip install -e ."
+        - "pip install -e \".[all]\""
+        - "Docker"
+        - "Other (describe below)"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python, PyTorch, CUDA, GPU(s).
+      placeholder: |
+        - OS: Ubuntu 22.04
+        - Python: 3.11.7
+        - PyTorch: 2.2.0+cu118
+        - GPU: 1× A100 80GB
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      description: Minimal commands or code snippet that triggers the bug.
+      render: bash
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: Include the full traceback if there is one.
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional context

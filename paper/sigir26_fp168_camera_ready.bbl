@@ -1,0 +1,668 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{37}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{} and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showURL}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showURL #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Asai et~al\mbox{.}(2024)]%
+        {asai2024selfrag}
+\bibfield{author}{\bibinfo{person}{Akari Asai}, \bibinfo{person}{Zeqiu Wu},
+  \bibinfo{person}{Yizhong Wang}, \bibinfo{person}{Avirup Sil}, {and}
+  \bibinfo{person}{Hannaneh Hajishirzi}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Self-RAG: Learning to Retrieve, Generate, and
+  Critique through Self-Reflection}. In \bibinfo{booktitle}{\emph{The Twelfth
+  International Conference on Learning Representations, {ICLR} 2024, Vienna,
+  Austria, May 7-11, 2024}}. \bibinfo{publisher}{OpenReview.net}.
+\newblock
+
+
+\bibitem[Borgeaud et~al\mbox{.}(2022)]%
+        {borgeaud2022retro}
+\bibfield{author}{\bibinfo{person}{Sebastian Borgeaud}, \bibinfo{person}{Arthur
+  Mensch}, \bibinfo{person}{Jordan Hoffmann}, \bibinfo{person}{Trevor Cai},
+  \bibinfo{person}{Eliza Rutherford}, \bibinfo{person}{Katie Millican},
+  \bibinfo{person}{George van~den Driessche}, \bibinfo{person}{Jean{-}Baptiste
+  Lespiau}, \bibinfo{person}{Bogdan Damoc}, \bibinfo{person}{Aidan Clark},
+  \bibinfo{person}{Diego de Las~Casas}, \bibinfo{person}{Aurelia Guy},
+  \bibinfo{person}{Jacob Menick}, \bibinfo{person}{Roman Ring},
+  \bibinfo{person}{Tom Hennigan}, \bibinfo{person}{Saffron Huang},
+  \bibinfo{person}{Loren Maggiore}, \bibinfo{person}{Chris Jones},
+  \bibinfo{person}{Albin Cassirer}, \bibinfo{person}{Andy Brock},
+  \bibinfo{person}{Michela Paganini}, \bibinfo{person}{Geoffrey Irving},
+  \bibinfo{person}{Oriol Vinyals}, \bibinfo{person}{Simon Osindero},
+  \bibinfo{person}{Karen Simonyan}, \bibinfo{person}{Jack~W. Rae},
+  \bibinfo{person}{Erich Elsen}, {and} \bibinfo{person}{Laurent Sifre}.}
+  \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Improving Language Models by Retrieving from
+  Trillions of Tokens}. In \bibinfo{booktitle}{\emph{International Conference
+  on Machine Learning, {ICML} 2022, 17-23 July 2022, Baltimore, Maryland,
+  {USA}}} \emph{(\bibinfo{series}{Proceedings of Machine Learning Research})},
+  \bibfield{editor}{\bibinfo{person}{Kamalika Chaudhuri},
+  \bibinfo{person}{Stefanie Jegelka}, \bibinfo{person}{Le~Song},
+  \bibinfo{person}{Csaba Szepesv{\'{a}}ri}, \bibinfo{person}{Gang Niu}, {and}
+  \bibinfo{person}{Sivan Sabato}} (Eds.). \bibinfo{publisher}{{PMLR}},
+  \bibinfo{pages}{2206--2240}.
+\newblock
+
+
+\bibitem[ES et~al\mbox{.}(2024)]%
+        {es2024ragas}
+\bibfield{author}{\bibinfo{person}{Shahul ES}, \bibinfo{person}{Jithin James},
+  \bibinfo{person}{Luis~Espinosa Anke}, {and} \bibinfo{person}{Steven
+  Schockaert}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{RAGAs: Automated Evaluation of Retrieval Augmented
+  Generation}. In \bibinfo{booktitle}{\emph{Proceedings of the 18th Conference
+  of the European Chapter of the Association for Computational Linguistics,
+  {EACL} 2024 - System Demonstrations, St. Julians, Malta, March 17-22, 2024}},
+  \bibfield{editor}{\bibinfo{person}{Nikolaos Aletras} {and}
+  \bibinfo{person}{Orph{\'{e}}e~De Clercq}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{150--158}.
+\newblock
+
+
+\bibitem[Gao et~al\mbox{.}(2024)]%
+        {gao2024ragsurvey}
+\bibfield{author}{\bibinfo{person}{Yunfan Gao}, \bibinfo{person}{Yun Xiong},
+  \bibinfo{person}{Xinyu Gao}, \bibinfo{person}{Kangxiang Jia},
+  \bibinfo{person}{Jinliu Pan}, \bibinfo{person}{Yuxi Bi}, \bibinfo{person}{Yi
+  Dai}, \bibinfo{person}{Jiawei Sun}, \bibinfo{person}{Meng Wang}, {and}
+  \bibinfo{person}{Haofen Wang}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Retrieval-Augmented Generation for Large Language
+  Models: A Survey}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}}
+  \bibinfo{volume}{arXiv.2312.10997} (\bibinfo{year}{2024}).
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2312.10997}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Guo et~al\mbox{.}(2025)]%
+        {deepseek2025r1}
+\bibfield{author}{\bibinfo{person}{Daya Guo}, \bibinfo{person}{Dejian Yang},
+  \bibinfo{person}{Haowei Zhang}, \bibinfo{person}{Junxiao Song},
+  \bibinfo{person}{Peiyi Wang}, \bibinfo{person}{Qihao Zhu},
+  \bibinfo{person}{Runxin Xu}, \bibinfo{person}{Ruoyu Zhang},
+  \bibinfo{person}{Shirong Ma}, \bibinfo{person}{Xiao Bi},
+  \bibinfo{person}{Xiaokang Zhang}, \bibinfo{person}{Xingkai Yu},
+  \bibinfo{person}{Yu Wu}, \bibinfo{person}{Z.~F. Wu}, \bibinfo{person}{Zhibin
+  Gou}, \bibinfo{person}{Zhihong Shao}, \bibinfo{person}{Zhuoshu Li},
+  \bibinfo{person}{Ziyi Gao}, {et~al\mbox{.}}} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{DeepSeek-R1} Incentivizes Reasoning in {LLMs}
+  through Reinforcement Learning}.
+\newblock \bibinfo{journal}{\emph{Nature}}  \bibinfo{volume}{645}
+  (\bibinfo{year}{2025}), \bibinfo{pages}{633--638}.
+\newblock
+\href{https://doi.org/10.1038/s41586-025-09422-z}{doi:\nolinkurl{10.1038/s41586-025-09422-z}}
+
+
+\bibitem[Guu et~al\mbox{.}(2020)]%
+        {guu2020realm}
+\bibfield{author}{\bibinfo{person}{Kelvin Guu}, \bibinfo{person}{Kenton Lee},
+  \bibinfo{person}{Zora Tung}, \bibinfo{person}{Panupong Pasupat}, {and}
+  \bibinfo{person}{Ming-Wei Chang}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{REALM: retrieval-augmented language model
+  pre-training}. In \bibinfo{booktitle}{\emph{Proceedings of the 37th
+  International Conference on Machine Learning}}
+  \emph{(\bibinfo{series}{ICML'20})}. \bibinfo{publisher}{JMLR.org}, Article
+  \bibinfo{articleno}{368}, \bibinfo{numpages}{10}~pages.
+\newblock
+
+
+\bibitem[Hashemi et~al\mbox{.}(2026)]%
+        {hashemi2026costaware}
+\bibfield{author}{\bibinfo{person}{Helia Hashemi}, \bibinfo{person}{Victor
+  R{\"{u}}hle}, {and} \bibinfo{person}{Saravan Rajmohan}.}
+  \bibinfo{year}{2026}\natexlab{}.
+\newblock \showarticletitle{Cost-Aware Retrieval-Augmentation Reasoning Models
+  with Adaptive Retrieval Depth}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the {ACM} Web Conference 2026, {WWW} 2026, Dubai, United Arab Emirates,
+  originally scheduled for April 13-17, 2026, rescheduled for June 29 - July 3,
+  2026}}, \bibfield{editor}{\bibinfo{person}{Hakim Hacid},
+  \bibinfo{person}{Yoelle Maarek}, \bibinfo{person}{Francesco Bonchi},
+  \bibinfo{person}{Ido Guy}, {and} \bibinfo{person}{Emine Yilmaz}} (Eds.).
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{2431--2440}.
+\newblock
+\href{https://doi.org/10.1145/3774904.3792693}{doi:\nolinkurl{10.1145/3774904.3792693}}
+
+
+\bibitem[Ho et~al\mbox{.}(2020)]%
+        {ho2020constructing}
+\bibfield{author}{\bibinfo{person}{Xanh Ho}, \bibinfo{person}{Anh{-}Khoa~Duong
+  Nguyen}, \bibinfo{person}{Saku Sugawara}, {and} \bibinfo{person}{Akiko
+  Aizawa}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Constructing {A} Multi-hop {QA} Dataset for
+  Comprehensive Evaluation of Reasoning Steps}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 28th International Conference on
+  Computational Linguistics, {COLING} 2020, Barcelona, Spain (Online), December
+  8-13, 2020}}, \bibfield{editor}{\bibinfo{person}{Donia Scott},
+  \bibinfo{person}{N{\'{u}}ria Bel}, {and} \bibinfo{person}{Chengqing Zong}}
+  (Eds.). \bibinfo{publisher}{International Committee on Computational
+  Linguistics}, \bibinfo{pages}{6609--6625}.
+\newblock
+\href{https://doi.org/10.18653/V1/2020.COLING-MAIN.580}{doi:\nolinkurl{10.18653/V1/2020.COLING-MAIN.580}}
+
+
+\bibitem[Islam et~al\mbox{.}(2024)]%
+        {islam2024openrag}
+\bibfield{author}{\bibinfo{person}{Shayekh~Bin Islam},
+  \bibinfo{person}{Md.~Asib Rahman}, \bibinfo{person}{K.~S. M.~Tozammel
+  Hossain}, \bibinfo{person}{Enamul Hoque}, \bibinfo{person}{Shafiq Joty},
+  {and} \bibinfo{person}{Md.~Rizwan Parvez}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Open-RAG: Enhanced Retrieval Augmented Reasoning
+  with Open-Source Large Language Models}. In
+  \bibinfo{booktitle}{\emph{Findings of the Association for Computational
+  Linguistics: {EMNLP} 2024, Miami, Florida, USA, November 12-16, 2024}}
+  \emph{(\bibinfo{series}{Findings of {ACL}})},
+  \bibfield{editor}{\bibinfo{person}{Yaser Al{-}Onaizan},
+  \bibinfo{person}{Mohit Bansal}, {and} \bibinfo{person}{Yun{-}Nung Chen}}
+  (Eds.). \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{14231--14244}.
+\newblock
+\href{https://doi.org/10.18653/V1/2024.FINDINGS-EMNLP.831}{doi:\nolinkurl{10.18653/V1/2024.FINDINGS-EMNLP.831}}
+
+
+\bibitem[Jeong et~al\mbox{.}(2024)]%
+        {jeong2024adaptiverag}
+\bibfield{author}{\bibinfo{person}{Soyeong Jeong}, \bibinfo{person}{Jinheon
+  Baek}, \bibinfo{person}{Sukmin Cho}, \bibinfo{person}{Sung~Ju Hwang}, {and}
+  \bibinfo{person}{Jong Park}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Adaptive-RAG: Learning to Adapt Retrieval-Augmented
+  Large Language Models through Question Complexity}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2024 Conference of the North
+  American Chapter of the Association for Computational Linguistics: Human
+  Language Technologies (Volume 1: Long Papers), {NAACL} 2024, Mexico City,
+  Mexico, June 16-21, 2024}}, \bibfield{editor}{\bibinfo{person}{Kevin Duh},
+  \bibinfo{person}{Helena G{\'{o}}mez{-}Adorno}, {and} \bibinfo{person}{Steven
+  Bethard}} (Eds.). \bibinfo{publisher}{Association for Computational
+  Linguistics}, \bibinfo{pages}{7036--7050}.
+\newblock
+\href{https://doi.org/10.18653/V1/2024.NAACL-LONG.389}{doi:\nolinkurl{10.18653/V1/2024.NAACL-LONG.389}}
+
+
+\bibitem[Jiang et~al\mbox{.}(2023)]%
+        {jiang2023flare}
+\bibfield{author}{\bibinfo{person}{Zhengbao Jiang}, \bibinfo{person}{Frank~F.
+  Xu}, \bibinfo{person}{Luyu Gao}, \bibinfo{person}{Zhiqing Sun},
+  \bibinfo{person}{Qian Liu}, \bibinfo{person}{Jane Dwivedi{-}Yu},
+  \bibinfo{person}{Yiming Yang}, \bibinfo{person}{Jamie Callan}, {and}
+  \bibinfo{person}{Graham Neubig}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Active Retrieval Augmented Generation}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2023 Conference on Empirical
+  Methods in Natural Language Processing, {EMNLP} 2023, Singapore, December
+  6-10, 2023}}, \bibfield{editor}{\bibinfo{person}{Houda Bouamor},
+  \bibinfo{person}{Juan Pino}, {and} \bibinfo{person}{Kalika Bali}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{7969--7992}.
+\newblock
+\href{https://doi.org/10.18653/V1/2023.EMNLP-MAIN.495}{doi:\nolinkurl{10.18653/V1/2023.EMNLP-MAIN.495}}
+
+
+\bibitem[Jin et~al\mbox{.}(2025)]%
+        {jin2025searchr1}
+\bibfield{author}{\bibinfo{person}{Bowen Jin}, \bibinfo{person}{Hansi Zeng},
+  \bibinfo{person}{Zhenrui Yue}, \bibinfo{person}{Jinsung Yoon},
+  \bibinfo{person}{Sercan~O Arik}, \bibinfo{person}{Dong Wang},
+  \bibinfo{person}{Hamed Zamani}, {and} \bibinfo{person}{Jiawei Han}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Search-R1: Training {LLM}s to Reason and Leverage
+  Search Engines with Reinforcement Learning}. In
+  \bibinfo{booktitle}{\emph{Second Conference on Language Modeling}}.
+\newblock
+\urldef\tempurl%
+\url{https://openreview.net/forum?id=Rwhi91ideu}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Karpukhin et~al\mbox{.}(2020)]%
+        {karpukhin2020dpr}
+\bibfield{author}{\bibinfo{person}{Vladimir Karpukhin}, \bibinfo{person}{Barlas
+  Oguz}, \bibinfo{person}{Sewon Min}, \bibinfo{person}{Patrick Lewis},
+  \bibinfo{person}{Ledell Wu}, \bibinfo{person}{Sergey Edunov},
+  \bibinfo{person}{Danqi Chen}, {and} \bibinfo{person}{Wen{-}tau Yih}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Dense Passage Retrieval for Open-Domain Question
+  Answering}. In \bibinfo{booktitle}{\emph{Proceedings of the 2020 Conference
+  on Empirical Methods in Natural Language Processing, {EMNLP} 2020, Online,
+  November 16-20, 2020}}, \bibfield{editor}{\bibinfo{person}{Bonnie Webber},
+  \bibinfo{person}{Trevor Cohn}, \bibinfo{person}{Yulan He}, {and}
+  \bibinfo{person}{Yang Liu}} (Eds.). \bibinfo{publisher}{Association for
+  Computational Linguistics}, \bibinfo{pages}{6769--6781}.
+\newblock
+\href{https://doi.org/10.18653/V1/2020.EMNLP-MAIN.550}{doi:\nolinkurl{10.18653/V1/2020.EMNLP-MAIN.550}}
+
+
+\bibitem[Khattab and Zaharia(2020)]%
+        {khattab2020colbert}
+\bibfield{author}{\bibinfo{person}{Omar Khattab} {and} \bibinfo{person}{Matei
+  Zaharia}.} \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{ColBERT: Efficient and Effective Passage Search via
+  Contextualized Late Interaction over {BERT}}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 43rd International {ACM} {SIGIR}
+  conference on research and development in Information Retrieval, {SIGIR}
+  2020, Virtual Event, China, July 25-30, 2020}},
+  \bibfield{editor}{\bibinfo{person}{Jimmy~X. Huang},
+  \bibinfo{person}{Yi~Chang}, \bibinfo{person}{Xueqi Cheng},
+  \bibinfo{person}{Jaap Kamps}, \bibinfo{person}{Vanessa Murdock},
+  \bibinfo{person}{Ji{-}Rong Wen}, {and} \bibinfo{person}{Yiqun Liu}} (Eds.).
+  \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{39--48}.
+\newblock
+\href{https://doi.org/10.1145/3397271.3401075}{doi:\nolinkurl{10.1145/3397271.3401075}}
+
+
+\bibitem[Kuhn et~al\mbox{.}(2023)]%
+        {kuhn2023semantic}
+\bibfield{author}{\bibinfo{person}{Lorenz Kuhn}, \bibinfo{person}{Yarin Gal},
+  {and} \bibinfo{person}{Sebastian Farquhar}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Semantic Uncertainty: Linguistic Invariances for
+  Uncertainty Estimation in Natural Language Generation}. In
+  \bibinfo{booktitle}{\emph{The Eleventh International Conference on Learning
+  Representations, {ICLR} 2023, Kigali, Rwanda, May 1-5, 2023}}.
+  \bibinfo{publisher}{OpenReview.net}.
+\newblock
+
+
+\bibitem[Kwon et~al\mbox{.}(2023)]%
+        {kwon2023vllm}
+\bibfield{author}{\bibinfo{person}{Woosuk Kwon}, \bibinfo{person}{Zhuohan Li},
+  \bibinfo{person}{Siyuan Zhuang}, \bibinfo{person}{Ying Sheng},
+  \bibinfo{person}{Lianmin Zheng}, \bibinfo{person}{Cody~Hao Yu},
+  \bibinfo{person}{Joseph Gonzalez}, \bibinfo{person}{Hao Zhang}, {and}
+  \bibinfo{person}{Ion Stoica}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Efficient Memory Management for Large Language
+  Model Serving with PagedAttention}. In \bibinfo{booktitle}{\emph{Proceedings
+  of the 29th Symposium on Operating Systems Principles, {SOSP} 2023, Koblenz,
+  Germany, October 23-26, 2023}}, \bibfield{editor}{\bibinfo{person}{Jason
+  Flinn}, \bibinfo{person}{Margo~I. Seltzer}, \bibinfo{person}{Peter Druschel},
+  \bibinfo{person}{Antoine Kaufmann}, {and} \bibinfo{person}{Jonathan Mace}}
+  (Eds.). \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{611--626}.
+\newblock
+\href{https://doi.org/10.1145/3600006.3613165}{doi:\nolinkurl{10.1145/3600006.3613165}}
+
+
+\bibitem[Lewis et~al\mbox{.}(2020)]%
+        {lewis2020rag}
+\bibfield{author}{\bibinfo{person}{Patrick Lewis}, \bibinfo{person}{Ethan
+  Perez}, \bibinfo{person}{Aleksandra Piktus}, \bibinfo{person}{Fabio Petroni},
+  \bibinfo{person}{Vladimir Karpukhin}, \bibinfo{person}{Naman Goyal},
+  \bibinfo{person}{Heinrich K{\"{u}}ttler}, \bibinfo{person}{Mike Lewis},
+  \bibinfo{person}{Wen{-}tau Yih}, \bibinfo{person}{Tim Rockt{\"{a}}schel},
+  \bibinfo{person}{Sebastian Riedel}, {and} \bibinfo{person}{Douwe Kiela}.}
+  \bibinfo{year}{2020}\natexlab{}.
+\newblock \showarticletitle{Retrieval-Augmented Generation for
+  Knowledge-Intensive {NLP} Tasks}. In \bibinfo{booktitle}{\emph{Advances in
+  Neural Information Processing Systems 33: Annual Conference on Neural
+  Information Processing Systems 2020, NeurIPS 2020, December 6-12, 2020,
+  virtual}}, \bibfield{editor}{\bibinfo{person}{Hugo Larochelle},
+  \bibinfo{person}{Marc'Aurelio Ranzato}, \bibinfo{person}{Raia Hadsell},
+  \bibinfo{person}{Maria{-}Florina Balcan}, {and} \bibinfo{person}{Hsuan{-}Tien
+  Lin}} (Eds.).
+\newblock
+
+
+\bibitem[Li et~al\mbox{.}(2024)]%
+        {li2024traq}
+\bibfield{author}{\bibinfo{person}{Shuo Li}, \bibinfo{person}{Sangdon Park},
+  \bibinfo{person}{Insup Lee}, {and} \bibinfo{person}{Osbert Bastani}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{TRAQ:} Trustworthy Retrieval Augmented Question
+  Answering via Conformal Prediction}. In \bibinfo{booktitle}{\emph{Proceedings
+  of the 2024 Conference of the North American Chapter of the Association for
+  Computational Linguistics: Human Language Technologies (Volume 1: Long
+  Papers), {NAACL} 2024, Mexico City, Mexico, June 16-21, 2024}},
+  \bibfield{editor}{\bibinfo{person}{Kevin Duh}, \bibinfo{person}{Helena
+  G{\'{o}}mez{-}Adorno}, {and} \bibinfo{person}{Steven Bethard}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{3799--3821}.
+\newblock
+\href{https://doi.org/10.18653/V1/2024.NAACL-LONG.210}{doi:\nolinkurl{10.18653/V1/2024.NAACL-LONG.210}}
+
+
+\bibitem[Lin et~al\mbox{.}(2024)]%
+        {lin2024generating}
+\bibfield{author}{\bibinfo{person}{Zhen Lin}, \bibinfo{person}{Shubhendu
+  Trivedi}, {and} \bibinfo{person}{Jimeng Sun}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{Generating with Confidence: Uncertainty
+  Quantification for Black-box Large Language Models}.
+\newblock \bibinfo{journal}{\emph{Trans. Mach. Learn. Res.}}
+  \bibinfo{volume}{2024} (\bibinfo{year}{2024}).
+\newblock
+
+
+\bibitem[Moskvoretskii et~al\mbox{.}(2025)]%
+        {Moskvoretskii2025adaptive}
+\bibfield{author}{\bibinfo{person}{Viktor Moskvoretskii},
+  \bibinfo{person}{Maria Marina}, \bibinfo{person}{Mikhail Salnikov},
+  \bibinfo{person}{Nikolay Ivanov}, \bibinfo{person}{Sergey Pletenev},
+  \bibinfo{person}{Daria Galimzianova}, \bibinfo{person}{Nikita Krayko},
+  \bibinfo{person}{Vasily Konovalov}, \bibinfo{person}{Irina Nikishina}, {and}
+  \bibinfo{person}{Alexander Panchenko}.} \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Adaptive Retrieval Without Self-Knowledge? Bringing
+  Uncertainty Back Home}. In \bibinfo{booktitle}{\emph{Proceedings of the 63rd
+  Annual Meeting of the Association for Computational Linguistics (Volume 1:
+  Long Papers), {ACL} 2025, Vienna, Austria, July 27 - August 1, 2025}},
+  \bibfield{editor}{\bibinfo{person}{Wanxiang Che}, \bibinfo{person}{Joyce
+  Nabende}, \bibinfo{person}{Ekaterina Shutova}, {and}
+  \bibinfo{person}{Mohammad~Taher Pilehvar}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{6355--6384}.
+\newblock
+
+
+\bibitem[OpenAI(2024)]%
+        {openai2024o1systemcard}
+\bibfield{author}{\bibinfo{person}{OpenAI}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{OpenAI o1 System Card}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint}}
+  \bibinfo{volume}{arXiv.2412.16720} (\bibinfo{year}{2024}).
+\newblock
+\urldef\tempurl%
+\url{https://arxiv.org/abs/2412.16720}
+\showURL{%
+\tempurl}
+
+
+\bibitem[{Qwen Team}(2024)]%
+        {qwen2024qwq}
+\bibfield{author}{\bibinfo{person}{{Qwen Team}}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \bibinfo{title}{{QwQ}: Reflect Deeply on the Boundaries of the
+  Unknown}.
+\newblock
+  \bibinfo{howpublished}{\url{https://qwenlm.github.io/blog/qwq-32b-preview/}}.
+\newblock
+\newblock
+\shownote{Blog post}.
+
+
+\bibitem[Santhanam et~al\mbox{.}(2022a)]%
+        {santhanam2022plaid}
+\bibfield{author}{\bibinfo{person}{Keshav Santhanam}, \bibinfo{person}{Omar
+  Khattab}, \bibinfo{person}{Christopher Potts}, {and} \bibinfo{person}{Matei
+  Zaharia}.} \bibinfo{year}{2022}\natexlab{a}.
+\newblock \showarticletitle{{PLAID:} An Efficient Engine for Late Interaction
+  Retrieval}. In \bibinfo{booktitle}{\emph{Proceedings of the 31st {ACM}
+  International Conference on Information {\&} Knowledge Management, Atlanta,
+  GA, USA, October 17-21, 2022}},
+  \bibfield{editor}{\bibinfo{person}{Mohammad~Al Hasan} {and}
+  \bibinfo{person}{Li~Xiong}} (Eds.). \bibinfo{publisher}{{ACM}},
+  \bibinfo{pages}{1747--1756}.
+\newblock
+\href{https://doi.org/10.1145/3511808.3557325}{doi:\nolinkurl{10.1145/3511808.3557325}}
+
+
+\bibitem[Santhanam et~al\mbox{.}(2022b)]%
+        {santhanam2022colbertv2}
+\bibfield{author}{\bibinfo{person}{Keshav Santhanam}, \bibinfo{person}{Omar
+  Khattab}, \bibinfo{person}{Jon Saad{-}Falcon}, \bibinfo{person}{Christopher
+  Potts}, {and} \bibinfo{person}{Matei Zaharia}.}
+  \bibinfo{year}{2022}\natexlab{b}.
+\newblock \showarticletitle{ColBERTv2: Effective and Efficient Retrieval via
+  Lightweight Late Interaction}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 2022 Conference of the North American Chapter of the Association for
+  Computational Linguistics: Human Language Technologies, {NAACL} 2022,
+  Seattle, WA, United States, July 10-15, 2022}},
+  \bibfield{editor}{\bibinfo{person}{Marine Carpuat},
+  \bibinfo{person}{Marie{-}Catherine de~Marneffe}, {and}
+  \bibinfo{person}{Iv{\'{a}}n Vladimir~Meza Ru{\'{\i}}z}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{3715--3734}.
+\newblock
+\href{https://doi.org/10.18653/V1/2022.NAACL-MAIN.272}{doi:\nolinkurl{10.18653/V1/2022.NAACL-MAIN.272}}
+
+
+\bibitem[Scheerer et~al\mbox{.}(2025)]%
+        {scheerer2025warp}
+\bibfield{author}{\bibinfo{person}{Jan~Luca Scheerer}, \bibinfo{person}{Matei
+  Zaharia}, \bibinfo{person}{Christopher Potts}, \bibinfo{person}{Gustavo
+  Alonso}, {and} \bibinfo{person}{Omar Khattab}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{{WARP:} An Efficient Engine for Multi-Vector
+  Retrieval}. In \bibinfo{booktitle}{\emph{Proceedings of the 48th
+  International {ACM} {SIGIR} Conference on Research and Development in
+  Information Retrieval, {SIGIR} 2025, Padua, Italy, July 13-18, 2025}},
+  \bibfield{editor}{\bibinfo{person}{Nicola Ferro}, \bibinfo{person}{Maria
+  Maistro}, \bibinfo{person}{Gabriella Pasi}, \bibinfo{person}{Omar Alonso},
+  \bibinfo{person}{Andrew Trotman}, {and} \bibinfo{person}{Suzan Verberne}}
+  (Eds.). \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{2504--2512}.
+\newblock
+\href{https://doi.org/10.1145/3726302.3729904}{doi:\nolinkurl{10.1145/3726302.3729904}}
+
+
+\bibitem[Shi et~al\mbox{.}(2024)]%
+        {shi2024replug}
+\bibfield{author}{\bibinfo{person}{Weijia Shi}, \bibinfo{person}{Sewon Min},
+  \bibinfo{person}{Michihiro Yasunaga}, \bibinfo{person}{Minjoon Seo},
+  \bibinfo{person}{Richard James}, \bibinfo{person}{Mike Lewis},
+  \bibinfo{person}{Luke Zettlemoyer}, {and} \bibinfo{person}{Wen{-}tau Yih}.}
+  \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{REPLUG:} Retrieval-Augmented Black-Box Language
+  Models}. In \bibinfo{booktitle}{\emph{Proceedings of the 2024 Conference of
+  the North American Chapter of the Association for Computational Linguistics:
+  Human Language Technologies (Volume 1: Long Papers), {NAACL} 2024, Mexico
+  City, Mexico, June 16-21, 2024}}, \bibfield{editor}{\bibinfo{person}{Kevin
+  Duh}, \bibinfo{person}{Helena G{\'{o}}mez{-}Adorno}, {and}
+  \bibinfo{person}{Steven Bethard}} (Eds.). \bibinfo{publisher}{Association for
+  Computational Linguistics}, \bibinfo{pages}{8371--8384}.
+\newblock
+\href{https://doi.org/10.18653/V1/2024.NAACL-LONG.463}{doi:\nolinkurl{10.18653/V1/2024.NAACL-LONG.463}}
+
+
+\bibitem[Su et~al\mbox{.}(2024)]%
+        {su2024dragin}
+\bibfield{author}{\bibinfo{person}{Weihang Su}, \bibinfo{person}{Yichen Tang},
+  \bibinfo{person}{Qingyao Ai}, \bibinfo{person}{Zhijing Wu}, {and}
+  \bibinfo{person}{Yiqun Liu}.} \bibinfo{year}{2024}\natexlab{}.
+\newblock \showarticletitle{{DRAGIN:} Dynamic Retrieval Augmented Generation
+  based on the Real-time Information Needs of Large Language Models}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 62nd Annual Meeting of the
+  Association for Computational Linguistics (Volume 1: Long Papers), {ACL}
+  2024, Bangkok, Thailand, August 11-16, 2024}},
+  \bibfield{editor}{\bibinfo{person}{Lun{-}Wei Ku}, \bibinfo{person}{Andre
+  Martins}, {and} \bibinfo{person}{Vivek Srikumar}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{12991--13013}.
+\newblock
+\href{https://doi.org/10.18653/V1/2024.ACL-LONG.702}{doi:\nolinkurl{10.18653/V1/2024.ACL-LONG.702}}
+
+
+\bibitem[Sun et~al\mbox{.}(2025)]%
+        {sun2025rearter}
+\bibfield{author}{\bibinfo{person}{Zhongxiang Sun}, \bibinfo{person}{Qipeng
+  Wang}, \bibinfo{person}{Weijie Yu}, \bibinfo{person}{Xiaoxue Zang},
+  \bibinfo{person}{Kai Zheng}, \bibinfo{person}{Jun Xu}, \bibinfo{person}{Xiao
+  Zhang}, \bibinfo{person}{Yang Song}, {and} \bibinfo{person}{Han Li}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{ReARTeR: Retrieval-Augmented Reasoning with
+  Trustworthy Process Rewarding}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 48th International {ACM} {SIGIR} Conference on Research and Development
+  in Information Retrieval, {SIGIR} 2025, Padua, Italy, July 13-18, 2025}},
+  \bibfield{editor}{\bibinfo{person}{Nicola Ferro}, \bibinfo{person}{Maria
+  Maistro}, \bibinfo{person}{Gabriella Pasi}, \bibinfo{person}{Omar Alonso},
+  \bibinfo{person}{Andrew Trotman}, {and} \bibinfo{person}{Suzan Verberne}}
+  (Eds.). \bibinfo{publisher}{{ACM}}, \bibinfo{pages}{1251--1261}.
+\newblock
+\href{https://doi.org/10.1145/3726302.3730102}{doi:\nolinkurl{10.1145/3726302.3730102}}
+
+
+\bibitem[Tian et~al\mbox{.}(2023)]%
+        {tian2023verbalized}
+\bibfield{author}{\bibinfo{person}{Katherine Tian}, \bibinfo{person}{Eric
+  Mitchell}, \bibinfo{person}{Allan Zhou}, \bibinfo{person}{Archit Sharma},
+  \bibinfo{person}{Rafael Rafailov}, \bibinfo{person}{Huaxiu Yao},
+  \bibinfo{person}{Chelsea Finn}, {and} \bibinfo{person}{Christopher~D.
+  Manning}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Just Ask for Calibration: Strategies for Eliciting
+  Calibrated Confidence Scores from Language Models Fine-Tuned with Human
+  Feedback}. In \bibinfo{booktitle}{\emph{Proceedings of the 2023 Conference on
+  Empirical Methods in Natural Language Processing, {EMNLP} 2023, Singapore,
+  December 6-10, 2023}}, \bibfield{editor}{\bibinfo{person}{Houda Bouamor},
+  \bibinfo{person}{Juan Pino}, {and} \bibinfo{person}{Kalika Bali}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{5433--5442}.
+\newblock
+\href{https://doi.org/10.18653/V1/2023.EMNLP-MAIN.330}{doi:\nolinkurl{10.18653/V1/2023.EMNLP-MAIN.330}}
+
+
+\bibitem[Trivedi et~al\mbox{.}(2022)]%
+        {trivedi2022musique}
+\bibfield{author}{\bibinfo{person}{Harsh Trivedi}, \bibinfo{person}{Niranjan
+  Balasubramanian}, \bibinfo{person}{Tushar Khot}, {and}
+  \bibinfo{person}{Ashish Sabharwal}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{MuSiQue: Multihop Questions via Single-hop Question
+  Composition}.
+\newblock \bibinfo{journal}{\emph{Trans. Assoc. Comput. Linguistics}}
+  \bibinfo{volume}{10} (\bibinfo{year}{2022}), \bibinfo{pages}{539--554}.
+\newblock
+\href{https://doi.org/10.1162/TACL\_A\_00475}{doi:\nolinkurl{10.1162/TACL\_A\_00475}}
+
+
+\bibitem[Trivedi et~al\mbox{.}(2023)]%
+        {trivedi2023ircot}
+\bibfield{author}{\bibinfo{person}{Harsh Trivedi}, \bibinfo{person}{Niranjan
+  Balasubramanian}, \bibinfo{person}{Tushar Khot}, {and}
+  \bibinfo{person}{Ashish Sabharwal}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Interleaving Retrieval with Chain-of-Thought
+  Reasoning for Knowledge-Intensive Multi-Step Questions}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 61st Annual Meeting of the
+  Association for Computational Linguistics (Volume 1: Long Papers), {ACL}
+  2023, Toronto, Canada, July 9-14, 2023}},
+  \bibfield{editor}{\bibinfo{person}{Anna Rogers}, \bibinfo{person}{Jordan~L.
+  Boyd{-}Graber}, {and} \bibinfo{person}{Naoaki Okazaki}} (Eds.).
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{pages}{10014--10037}.
+\newblock
+\href{https://doi.org/10.18653/V1/2023.ACL-LONG.557}{doi:\nolinkurl{10.18653/V1/2023.ACL-LONG.557}}
+
+
+\bibitem[Wang et~al\mbox{.}(2023)]%
+        {wang2023selfconsistency}
+\bibfield{author}{\bibinfo{person}{Xuezhi Wang}, \bibinfo{person}{Jason Wei},
+  \bibinfo{person}{Dale Schuurmans}, \bibinfo{person}{Quoc~V. Le},
+  \bibinfo{person}{Ed~H. Chi}, \bibinfo{person}{Sharan Narang},
+  \bibinfo{person}{Aakanksha Chowdhery}, {and} \bibinfo{person}{Denny Zhou}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \showarticletitle{Self-Consistency Improves Chain of Thought
+  Reasoning in Language Models}. In \bibinfo{booktitle}{\emph{The Eleventh
+  International Conference on Learning Representations, {ICLR} 2023, Kigali,
+  Rwanda, May 1-5, 2023}}. \bibinfo{publisher}{OpenReview.net}.
+\newblock
+
+
+\bibitem[Wei et~al\mbox{.}(2022)]%
+        {wei2022chain}
+\bibfield{author}{\bibinfo{person}{Jason Wei}, \bibinfo{person}{Xuezhi Wang},
+  \bibinfo{person}{Dale Schuurmans}, \bibinfo{person}{Maarten Bosma},
+  \bibinfo{person}{Brian Ichter}, \bibinfo{person}{Fei Xia},
+  \bibinfo{person}{Ed~H. Chi}, \bibinfo{person}{Quoc~V. Le}, {and}
+  \bibinfo{person}{Denny Zhou}.} \bibinfo{year}{2022}\natexlab{}.
+\newblock \showarticletitle{Chain-of-Thought Prompting Elicits Reasoning in
+  Large Language Models}. In \bibinfo{booktitle}{\emph{Advances in Neural
+  Information Processing Systems 35: Annual Conference on Neural Information
+  Processing Systems 2022, NeurIPS 2022, New Orleans, LA, USA, November 28 -
+  December 9, 2022}}, \bibfield{editor}{\bibinfo{person}{Sanmi Koyejo},
+  \bibinfo{person}{S.~Mohamed}, \bibinfo{person}{A.~Agarwal},
+  \bibinfo{person}{Danielle Belgrave}, \bibinfo{person}{K.~Cho}, {and}
+  \bibinfo{person}{A.~Oh}} (Eds.).
+\newblock
+
+
+\bibitem[Williams(1992)]%
+        {williams1992reinforce}
+\bibfield{author}{\bibinfo{person}{Ronald~J. Williams}.}
+  \bibinfo{year}{1992}\natexlab{}.
+\newblock \showarticletitle{Simple Statistical Gradient-Following Algorithms
+  for Connectionist Reinforcement Learning}.
+\newblock \bibinfo{journal}{\emph{Mach. Learn.}}  \bibinfo{volume}{8}
+  (\bibinfo{year}{1992}), \bibinfo{pages}{229--256}.
+\newblock
+\href{https://doi.org/10.1007/BF00992696}{doi:\nolinkurl{10.1007/BF00992696}}
+
+
+\bibitem[Xiong et~al\mbox{.}(2021)]%
+        {xiong2021ance}
+\bibfield{author}{\bibinfo{person}{Lee Xiong}, \bibinfo{person}{Chenyan Xiong},
+  \bibinfo{person}{Ye Li}, \bibinfo{person}{Kwok{-}Fung Tang},
+  \bibinfo{person}{Jialin Liu}, \bibinfo{person}{Paul~N. Bennett},
+  \bibinfo{person}{Junaid Ahmed}, {and} \bibinfo{person}{Arnold Overwijk}.}
+  \bibinfo{year}{2021}\natexlab{}.
+\newblock \showarticletitle{Approximate Nearest Neighbor Negative Contrastive
+  Learning for Dense Text Retrieval}. In \bibinfo{booktitle}{\emph{9th
+  International Conference on Learning Representations, {ICLR} 2021, Virtual
+  Event, Austria, May 3-7, 2021}}. \bibinfo{publisher}{OpenReview.net}.
+\newblock
+
+
+\bibitem[Yang et~al\mbox{.}(2018)]%
+        {yang2018hotpotqa}
+\bibfield{author}{\bibinfo{person}{Zhilin Yang}, \bibinfo{person}{Peng Qi},
+  \bibinfo{person}{Saizheng Zhang}, \bibinfo{person}{Yoshua Bengio},
+  \bibinfo{person}{William~W. Cohen}, \bibinfo{person}{Ruslan Salakhutdinov},
+  {and} \bibinfo{person}{Christopher~D. Manning}.}
+  \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{HotpotQA: {A} Dataset for Diverse, Explainable
+  Multi-hop Question Answering}. In \bibinfo{booktitle}{\emph{Proceedings of
+  the 2018 Conference on Empirical Methods in Natural Language Processing,
+  Brussels, Belgium, October 31 - November 4, 2018}},
+  \bibfield{editor}{\bibinfo{person}{Ellen Riloff}, \bibinfo{person}{David
+  Chiang}, \bibinfo{person}{Julia Hockenmaier}, {and} \bibinfo{person}{Jun'ichi
+  Tsujii}} (Eds.). \bibinfo{publisher}{Association for Computational
+  Linguistics}, \bibinfo{pages}{2369--2380}.
+\newblock
+\href{https://doi.org/10.18653/V1/D18-1259}{doi:\nolinkurl{10.18653/V1/D18-1259}}
+
+
+\bibitem[Zeng et~al\mbox{.}(2025)]%
+        {huang2025thinkingloud}
+\bibfield{author}{\bibinfo{person}{Qingcheng Zeng}, \bibinfo{person}{Weihao
+  Xuan}, \bibinfo{person}{Leyang Cui}, {and} \bibinfo{person}{Rob Voigt}.}
+  \bibinfo{year}{2025}\natexlab{}.
+\newblock \showarticletitle{Thinking Out Loud: Do Reasoning Models Know When
+  They're Right?}. In \bibinfo{booktitle}{\emph{Proceedings of the 2025
+  Conference on Empirical Methods in Natural Language Processing, {EMNLP} 2025,
+  Suzhou, China, November 4-9, 2025}},
+  \bibfield{editor}{\bibinfo{person}{Christos Christodoulopoulos},
+  \bibinfo{person}{Tanmoy Chakraborty}, \bibinfo{person}{Carolyn Rose}, {and}
+  \bibinfo{person}{Violet Peng}} (Eds.). \bibinfo{publisher}{Association for
+  Computational Linguistics}, \bibinfo{pages}{1394--1407}.
+\newblock
+\href{https://doi.org/10.18653/V1/2025.EMNLP-MAIN.73}{doi:\nolinkurl{10.18653/V1/2025.EMNLP-MAIN.73}}
+
+
+\end{thebibliography}

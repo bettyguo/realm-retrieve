@@ -1,0 +1,30 @@
+# Hydra config for `make train-segmentation` (3-layer transformer boundary
+# classifier, target 94.2 F1 on the held-out test set).
+
+defaults:
+  - _self_
+
+seed: 0xRE4L
+
+model:
+  base_model: sentence-transformers/all-MiniLM-L6-v2
+  hidden_dim: 256
+  num_layers: 3
+  num_heads: 4
+  dropout: 0.1
+
+data:
+  train_path: data/processed/segmentation/train.jsonl
+  val_path:   data/processed/segmentation/val.jsonl
+  window_size: 128
+
+training:
+  batch_size: 32
+  num_epochs: 10
+  num_workers: 4
+  learning_rate: 5e-5
+  checkpoint_dir: checkpoints/segmentation
+
+logging:
+  use_wandb: false
+  log_level: INFO

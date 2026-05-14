@@ -271,25 +271,42 @@ class REINFORCETrainer:
         # Compute λ1 using curriculum schedule
         progress = min(1.0, self.training_step / 50000)
         lambda1 = self.lambda1_start + (self.lambda1_end - self.lambda1_start) * progress
-        
+
         # Compute reward
         reward = f1_score - lambda1 * num_retrievals - self.lambda2 * total_latency
-        
+
         # Update baseline
         self.baseline = (
             self.baseline_momentum * self.baseline +
             (1 - self.baseline_momentum) * reward
         )
-        
+
         # Advantage = reward - baseline
         advantage = reward - self.baseline
-        
+
+        # Empty episode: nothing to backprop through. Update the baseline (already
+        # done above) and return early so callers get a stable metrics dict.
+        if not states:
+            self.training_step += 1
+            return {
+                "loss": 0.0,
+                "policy_loss": 0.0,
+                "entropy": 0.0,
+                "reward": reward,
+                "f1_score": f1_score,
+                "num_retrievals": num_retrievals,
+                "lambda1": lambda1,
+                "baseline": self.baseline,
+                "advantage": advantage,
+                "skipped_empty_episode": True,
+            }
+
         # Compute policy loss (REINFORCE)
         log_probs = []
         for state, action in zip(states, actions):
             log_prob = self.policy.compute_log_prob(state, action)
             log_probs.append(log_prob)
-        
+
         # Stack log probs
         log_probs = torch.stack(log_probs)
         

@@ -1,0 +1,10 @@
+# Lightweight dev-only dependency set. Use `pip install -e ".[dev]"` for the
+# full set declared in pyproject.toml — this file pins versions for CI.
+pytest==7.4.4
+pytest-cov==4.1.0
+pytest-xdist==3.5.0
+black==24.1.1
+isort==5.13.2
+ruff==0.3.4
+mypy==1.8.0
+pre-commit==3.6.1

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 240" role="img" aria-label="ReaLM-Retrieve — Adaptive Retrieval for Large Reasoning Models">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b1e3f"/>
+      <stop offset="100%" stop-color="#1a3a8a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="100%" stop-color="#e63946"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+
+  <rect width="820" height="240" rx="18" fill="url(#bg)"/>
+  <g filter="url(#soft)" opacity="0.45">
+    <circle cx="730" cy="50"  r="60" fill="#3a8dde"/>
+    <circle cx="60"  cy="200" r="80" fill="#9d4edd"/>
+  </g>
+
+  <!-- Headline -->
+  <text x="40" y="84" font-family="Helvetica, Arial, sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-1.2">
+    ReaLM-Retrieve
+  </text>
+  <text x="40" y="118" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="500" fill="#cfd8e3">
+    When to Retrieve <tspan font-style="italic">During</tspan> Reasoning — Adaptive RAG for Large Reasoning Models
+  </text>
+
+  <!-- Chips -->
+  <g font-family="Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">
+    <g>
+      <rect x="40"  y="142" width="116" height="30" rx="15" fill="url(#chip)" stroke="#ffffff" stroke-opacity="0.25"/>
+      <text x="98"  y="161" text-anchor="middle">SIGIR · 2026</text>
+    </g>
+    <g>
+      <rect x="166" y="142" width="148" height="30" rx="15" fill="url(#chip)" stroke="#ffffff" stroke-opacity="0.25"/>
+      <text x="240" y="161" text-anchor="middle">+5.8 F1 vs IRCoT</text>
+    </g>
+    <g>
+      <rect x="324" y="142" width="168" height="30" rx="15" fill="url(#chip)" stroke="#ffffff" stroke-opacity="0.25"/>
+      <text x="408" y="161" text-anchor="middle">47 % fewer retrievals</text>
+    </g>
+    <g>
+      <rect x="502" y="142" width="148" height="30" rx="15" fill="url(#chip)" stroke="#ffffff" stroke-opacity="0.25"/>
+      <text x="576" y="161" text-anchor="middle">2.1× F1 / call</text>
+    </g>
+  </g>
+
+  <!-- Pipeline glyph -->
+  <g transform="translate(40,190)" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#ffffff">
+    <g font-weight="700">
+      <circle cx="0"   cy="0" r="10" fill="url(#accent)"/>
+      <circle cx="80"  cy="0" r="10" fill="url(#accent)"/>
+      <circle cx="160" cy="0" r="10" fill="url(#accent)"/>
+      <circle cx="240" cy="0" r="10" fill="url(#accent)"/>
+      <circle cx="320" cy="0" r="10" fill="url(#accent)"/>
+      <text x="0"   y="4" text-anchor="middle">1</text>
+      <text x="80"  y="4" text-anchor="middle">2</text>
+      <text x="160" y="4" text-anchor="middle">3</text>
+      <text x="240" y="4" text-anchor="middle">4</text>
+      <text x="320" y="4" text-anchor="middle">5</text>
+    </g>
+    <g stroke="#ffffff" stroke-opacity="0.5" stroke-width="1.5">
+      <line x1="14"  y1="0" x2="66"  y2="0"/>
+      <line x1="94"  y1="0" x2="146" y2="0"/>
+      <line x1="174" y1="0" x2="226" y2="0"/>
+      <line x1="254" y1="0" x2="306" y2="0"/>
+    </g>
+    <g font-size="11" fill="#cfd8e3" font-weight="500">
+      <text x="0"   y="24" text-anchor="middle">segment</text>
+      <text x="80"  y="24" text-anchor="middle">RSUS</text>
+      <text x="160" y="24" text-anchor="middle">policy π</text>
+      <text x="240" y="24" text-anchor="middle">retrieve</text>
+      <text x="320" y="24" text-anchor="middle">answer</text>
+    </g>
+  </g>
+
+  <!-- Star prompt -->
+  <g transform="translate(700,210)">
+    <text font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#ffd54f" font-weight="700" text-anchor="end">★ star us on GitHub</text>
+  </g>
+</svg>

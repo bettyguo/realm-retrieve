@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include CITATION.cff
+include CHANGELOG.md
+include pyproject.toml
+recursive-include src/realm_retrieve/configs *.yaml
+recursive-include configs *.yaml
+include src/realm_retrieve/py.typed
+prune tests
+prune notebooks
+prune paper
+prune docs

@@ -6,12 +6,14 @@ Integrates ColBERTv2 with PLAID and
 WARP optimizations.
 """
 
-from typing import List, Dict, Optional, Tuple
-import torch
-from colbert import Searcher
-from colbert.infra import ColBERTConfig, Run, RunConfig
-from colbert.data import Queries
+from typing import Dict, List, Optional, Tuple
+
 import numpy as np
+import torch
+
+# ``colbert`` is a heavy GPU-leaning optional dep; it is imported lazily inside
+# ``ColBERTRetriever.__init__`` so the module can be imported on CPU-only /
+# API-only setups (see Issue #3).
 
 
 class ColBERTRetriever:
@@ -34,12 +36,14 @@ class ColBERTRetriever:
         k: int = 5,
         device: str = "cuda",
     ):
+        from colbert import Searcher  # lazy: heavy optional dep
+        from colbert.infra import ColBERTConfig, Run, RunConfig
+
         self.index_path = index_path
         self.checkpoint = checkpoint
         self.k = k
         self.device = device
-        
-        # Initialize ColBERT searcher
+
         with Run().context(RunConfig(nranks=1, experiment="realm")):
             config = ColBERTConfig(
                 query_maxlen=256,

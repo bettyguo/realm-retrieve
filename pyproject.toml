@@ -1,0 +1,166 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "realm-retrieve"
+version = "1.0.0"
+description = "ReaLM-Retrieve: Adaptive retrieval for Large Reasoning Models (SIGIR 2026)."
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Dongxin Guo", email = "bettyguo@connect.hku.hk" },
+    { name = "Jikun Wu",     email = "hk950014@connect.hku.hk" },
+    { name = "Siu Ming Yiu", email = "smyiu@cs.hku.hk" },
+]
+keywords = [
+    "retrieval-augmented-generation",
+    "rag",
+    "large-reasoning-models",
+    "reasoning",
+    "deepseek-r1",
+    "colbert",
+    "information-retrieval",
+    "reinforcement-learning",
+    "sigir-2026",
+    "multi-hop-qa",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "torch>=2.2,<2.5",
+    "transformers>=4.37,<5",
+    "numpy>=1.26,<2",
+    "scipy>=1.12,<2",
+    "scikit-learn>=1.4",
+    "spacy>=3.7,<4",
+    "pytrec-eval>=0.5",
+    "datasets>=2.17",
+    "hydra-core>=1.3",
+    "omegaconf>=2.3",
+    "pyyaml>=6",
+    "tqdm>=4.66",
+    "rich>=13.7",
+    "click>=8.1",
+    "jsonlines>=4",
+    "sentence-transformers>=2.3",
+]
+
+[project.optional-dependencies]
+# Heavy inference + retrieval stack (Linux + CUDA)
+serve = [
+    "vllm>=0.3,<0.5",
+    "colbert-ai>=0.2.19",
+    "faiss-gpu==1.7.4 ; platform_system == 'Linux'",
+    "ray>=2.9",
+]
+api = [
+    "openai>=1.12",
+    "anthropic>=0.18",
+]
+train = [
+    "stable-baselines3>=2.2",
+    "gymnasium>=0.29",
+    "wandb>=0.16",
+    "tensorboard>=2.15",
+    "accelerate>=0.26",
+    "peft>=0.8",
+]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-xdist>=3.5",
+    "black>=24.1",
+    "isort>=5.13",
+    "ruff>=0.3",
+    "mypy>=1.8",
+    "pre-commit>=3.6",
+    "ipython>=8.21",
+]
+docs = [
+    "mkdocs>=1.5",
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.24",
+    "mkdocs-git-revision-date-localized-plugin>=1.2",
+]
+all = ["realm-retrieve[serve,api,train,dev,docs]"]
+
+[project.urls]
+Homepage      = "https://github.com/bettyguo/realm-retrieve"
+Repository    = "https://github.com/bettyguo/realm-retrieve"
+Documentation = "https://github.com/bettyguo/realm-retrieve#readme"
+Issues        = "https://github.com/bettyguo/realm-retrieve/issues"
+Paper         = "https://doi.org/10.1145/3805712.3809722"
+
+[project.scripts]
+realm-retrieve         = "realm_retrieve.cli:main"
+realm-quickstart       = "realm_retrieve.cli:quickstart"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["realm_retrieve*"]
+
+[tool.setuptools.package-data]
+realm_retrieve = ["py.typed", "configs/*.yaml"]
+
+# ----------------------------------------------------------------------
+# Tooling
+# ----------------------------------------------------------------------
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["realm_retrieve"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501", "B008"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --cov=realm_retrieve --cov-report=term-missing"
+markers = [
+    "slow: marks tests as slow (deselect with -m 'not slow')",
+    "gpu: requires CUDA-capable GPU",
+    "integration: integration tests requiring full deps",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["realm_retrieve"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]

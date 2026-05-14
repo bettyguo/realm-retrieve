@@ -1,0 +1,107 @@
+# =========================================================
+# Python
+# =========================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual envs
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# =========================================================
+# Testing / coverage
+# =========================================================
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+
+# =========================================================
+# Notebooks
+# =========================================================
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# =========================================================
+# Type checking / linting
+# =========================================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# =========================================================
+# Editors / OS
+# =========================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================================================
+# ML / Project artifacts
+# =========================================================
+checkpoints/
+runs/
+outputs/
+wandb/
+mlruns/
+lightning_logs/
+data/
+!data/.gitkeep
+indices/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# Hydra
+.hydra/
+multirun/
+
+# Local config
+*.local.yaml
+configs/local/
+.env.local

@@ -9,13 +9,17 @@ Implements step-level uncertainty detection through three signals:
 RSUS(r_i) = α·U_verb(r_i) + β·U_ent(r_i) + γ·U_cons(r_i)
 """
 
-from typing import List, Dict, Tuple, Optional
+import math
+import re
+from collections import defaultdict
+from dataclasses import dataclass
+from typing import Dict, List, Optional, Tuple
+
 import numpy as np
 import torch
-import spacy
-from dataclasses import dataclass
-from collections import defaultdict
-import re
+
+# spaCy is loaded lazily inside ``RSUSCalculator.__init__`` (Issue #3) and the
+# spaCy English model is downloaded on demand if it is missing (Issue #5).
 
 
 @dataclass
@@ -61,17 +65,32 @@ class RSUSCalculator:
             beta: Weight for entity entropy
             gamma: Weight for consistency signal
         """
+        # Issue #5: catch a common configuration mistake at construction time
+        # rather than producing silently mis-scaled RSUS values.
+        for name, val in (("alpha", alpha), ("beta", beta), ("gamma", gamma)):
+            if val < 0:
+                raise ValueError(f"RSUS weight {name}={val!r} must be >= 0")
+        total = alpha + beta + gamma
+        if not math.isclose(total, 1.0, abs_tol=1e-3):
+            raise ValueError(
+                f"RSUS weights must sum to 1; got alpha={alpha}, beta={beta}, "
+                f"gamma={gamma} (sum={total:.6f})"
+            )
+
         self.reasoning_model = reasoning_model
         self.retriever = retriever
-        
-        # RSUS weights (optimized on validation set)
         self.alpha = alpha
         self.beta = beta
         self.gamma = gamma
-        
-        # Load spaCy for NER
-        self.nlp = spacy.load("en_core_web_sm")
-        
+
+        # Lazy import + auto-fetch the English NER model on first use.
+        import spacy
+        try:
+            self.nlp = spacy.load("en_core_web_sm")
+        except OSError:
+            spacy.cli.download("en_core_web_sm")
+            self.nlp = spacy.load("en_core_web_sm")
+
         self.device = device
         
         # Verbalized uncertainty prompt template

@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+title: "ReaLM-Retrieve: When to Retrieve During Reasoning"
+message: "If you use ReaLM-Retrieve in your research, please cite the SIGIR 2026 paper below."
+type: software
+version: 1.0.0
+date-released: "2026-05-14"
+license: Apache-2.0
+repository-code: "https://github.com/bettyguo/realm-retrieve"
+url: "https://github.com/bettyguo/realm-retrieve"
+authors:
+  - family-names: "Guo"
+    given-names: "Dongxin"
+    orcid: "https://orcid.org/0009-0000-2388-1072"
+    affiliation: "The University of Hong Kong"
+    email: "bettyguo@connect.hku.hk"
+  - family-names: "Wu"
+    given-names: "Jikun"
+    orcid: "https://orcid.org/0000-0002-2327-4157"
+    affiliation: "Stellaris AI Limited"
+    email: "hk950014@connect.hku.hk"
+  - family-names: "Yiu"
+    given-names: "Siu Ming"
+    orcid: "https://orcid.org/0000-0002-3975-8500"
+    affiliation: "The University of Hong Kong"
+    email: "smyiu@cs.hku.hk"
+keywords:
+  - retrieval-augmented-generation
+  - large-reasoning-models
+  - adaptive-retrieval
+  - reinforcement-learning
+  - multi-hop-qa
+preferred-citation:
+  type: conference-paper
+  title: "When to Retrieve During Reasoning: Adaptive Retrieval for Large Reasoning Models"
+  authors:
+    - family-names: "Guo"
+      given-names: "Dongxin"
+    - family-names: "Wu"
+      given-names: "Jikun"
+    - family-names: "Yiu"
+      given-names: "Siu Ming"
+  conference:
+    name: "Proceedings of the 49th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '26)"
+    city: "Melbourne"
+    country: "AU"
+  year: 2026
+  month: 7
+  doi: "10.1145/3805712.3809722"
+  publisher:
+    name: "ACM"

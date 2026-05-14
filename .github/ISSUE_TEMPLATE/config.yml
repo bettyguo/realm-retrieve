@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions
+    url: https://github.com/bettyguo/realm-retrieve/discussions
+    about: Ask questions, share results, or propose research directions.
+  - name: 📄 SIGIR 2026 paper
+    url: https://doi.org/10.1145/3805712.3809722
+    about: Background, methodology, and full experimental results.
+  - name: 🔐 Security report
+    url: https://github.com/bettyguo/realm-retrieve/blob/main/SECURITY.md
+    about: Please do NOT open a public issue for vulnerabilities.

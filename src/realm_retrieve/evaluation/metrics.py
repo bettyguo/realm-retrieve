@@ -8,12 +8,15 @@ Implements:
 4. Statistical Significance: Paired bootstrap resampling
 """
 
-from typing import List, Dict, Tuple
-import numpy as np
-import pytrec_eval
 from collections import Counter
+from typing import Dict, List, Tuple
 import re
 import string
+
+import numpy as np
+
+# pytrec_eval is only needed by compute_retrieval_metrics — load it lazily so
+# the rest of the module is usable in lightweight CPU environments.
 
 
 def normalize_answer(s: str) -> str:
@@ -90,6 +93,8 @@ def compute_retrieval_metrics(
     Returns:
         Dict of metric name -> value
     """
+    import pytrec_eval  # lazy: optional heavy dep
+
     evaluator = pytrec_eval.RelevanceEvaluator(
         qrels,
         {'recall', 'P', 'map', 'ndcg', 'recip_rank'}

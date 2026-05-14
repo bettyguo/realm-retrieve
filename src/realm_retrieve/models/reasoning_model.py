@@ -9,12 +9,16 @@ Unified interface for large reasoning models:
 Handles both open-weight models (via vLLM) and API-only models.
 """
 
-from typing import List, Optional, Dict
-from abc import ABC, abstractmethod
-import torch
-from vllm import LLM, SamplingParams
-import openai
 import os
+from abc import ABC, abstractmethod
+from typing import Dict, List, Optional
+
+import torch
+
+# vLLM and openai are heavy optional dependencies. We import them lazily inside
+# the subclasses that actually need them so that ``from
+# realm_retrieve.models.reasoning_model import ReasoningModelWrapper`` keeps
+# working in CPU-only or API-only environments (see Issue #3).
 
 
 class ReasoningModelWrapper(ABC):
@@ -49,18 +53,17 @@ class VLLMReasoningModel(ReasoningModelWrapper):
         tensor_parallel_size: int = 8,
         device: str = "cuda",
     ):
+        from vllm import LLM  # lazy: optional GPU-only dep
+        from sentence_transformers import SentenceTransformer
+
         self.model_name = model_name
-        
-        # Initialize vLLM
+
         self.llm = LLM(
             model=model_name,
             tensor_parallel_size=tensor_parallel_size,
             trust_remote_code=True,
             max_model_len=32768,
         )
-        
-        # For embeddings
-        from sentence_transformers import SentenceTransformer
         self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
     
     def generate(
@@ -70,12 +73,13 @@ class VLLMReasoningModel(ReasoningModelWrapper):
         temperature: float = 0.7,
         stop_sequences: Optional[List[str]] = None,
     ) -> str:
+        from vllm import SamplingParams  # lazy
+
         sampling_params = SamplingParams(
             temperature=temperature,
             max_tokens=max_tokens,
             stop=stop_sequences,
         )
-        
         outputs = self.llm.generate([prompt], sampling_params)
         return outputs[0].outputs[0].text
     
@@ -93,11 +97,11 @@ class OpenAIReasoningModel(ReasoningModelWrapper):
     """
     
     def __init__(self, model_name: str = "o1-preview", api_key: Optional[str] = None):
+        import openai  # lazy: only required if you actually use the OpenAI backend
+        from sentence_transformers import SentenceTransformer
+
         self.model_name = model_name
         self.client = openai.OpenAI(api_key=api_key or os.getenv("OPENAI_API_KEY"))
-        
-        # For embeddings
-        from sentence_transformers import SentenceTransformer
         self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
     
     def generate(

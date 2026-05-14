@@ -1,0 +1,76 @@
+site_name: ReaLM-Retrieve
+site_description: Adaptive retrieval for Large Reasoning Models (SIGIR 2026).
+site_url: https://bettyguo.github.io/realm-retrieve/
+repo_url: https://github.com/bettyguo/realm-retrieve
+repo_name: bettyguo/realm-retrieve
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - content.action.edit
+    - search.highlight
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle: { icon: material/weather-night, name: Switch to dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle: { icon: material/weather-sunny, name: Switch to light mode }
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_source: true
+            docstring_style: google
+            members_order: source
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Installation: install.md
+      - Quickstart: quickstart.md
+      - Inference: inference.md
+  - Concepts:
+      - RSUS: concepts/rsus.md
+      - Policy: concepts/policy.md
+      - Retrieval: concepts/retrieval.md
+  - Reference:
+      - API: reference/api.md
+  - Project:
+      - Contributing: contributing.md
+      - Changelog: changelog.md
