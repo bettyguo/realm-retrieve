@@ -14,7 +14,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ​​​—
 
 ### Fixed
-- ​​​—
+- **#1** `evaluate.py` Hydra `config_path` pointed at a non-existent
+  `configs/experiments/` directory — the trainers and `make eval` errored
+  out before doing any work. Moved the YAML and added the two missing
+  training configs.
+- **#2** `REINFORCETrainer.train_step` crashed on empty placeholder episodes
+  (`torch.stack([])`). Added an explicit guard that updates the baseline,
+  bumps `training_step`, and returns a stable metrics dict with
+  `skipped_empty_episode=True`.
+- **#3** Heavy submodule imports (`vllm`, `colbert.*`, `openai`, `spacy`)
+  were pulled at module top, breaking `from realm_retrieve.models.X import Y`
+  on CPU-only / API-only environments. Moved them inside the methods that
+  actually need them and asserted the contract in `tests/test_imports.py`.
+- **#4** Trainers referenced Hydra configs that did not ship with the repo.
+  Added `configs/experiments/{evaluate,train_segmentation,train_policy}.yaml`.
+- **#5** `RSUSCalculator` silently accepted `(α, β, γ)` weights that did not
+  sum to 1, producing out-of-range RSUS values that broke the policy
+  threshold. Now validated at construction time with a clear error message.
 
 ---
 

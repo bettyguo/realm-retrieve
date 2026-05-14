@@ -252,16 +252,31 @@ See [Citation](#-citation) below or `CITATION.cff` in this repo.
 
 ## 🛣 Roadmap
 
-- [x] SIGIR '26 camera-ready release (v1.0)
-- [x] CPU-friendly quickstart demo
-- [ ] HuggingFace Space + interactive playground
-- [ ] vLLM serving recipe (single command)
-- [ ] Hard-negative mining for RSUS entity entropy
-- [ ] Multi-lingual ablation (zh / ja / es)
-- [ ] Plug-in retriever protocol (BM25 · SPLADE · custom)
-- [ ] On-device variant (≤ 7 B params end-to-end)
+We ship in three-week milestones. Click into any issue for the design sketch
+and acceptance criteria — most are scoped tightly enough to land in a single
+PR.
 
-See [open issues](https://github.com/bettyguo/realm-retrieve/issues) — or open one.
+### v1.1 — *due 2026-06-11* &nbsp; [milestone](https://github.com/bettyguo/realm-retrieve/milestone/2)
+- [ ] [#6](https://github.com/bettyguo/realm-retrieve/issues/6) `chore(types):` modernise type hints to PEP-604 — **good first issue**
+- [ ] [#7](https://github.com/bettyguo/realm-retrieve/issues/7) `test(ci):` CPU smoke test that wires the full pipeline from a wheel — **good first issue**
+
+### v1.2 — *due 2026-07-09* &nbsp; [milestone](https://github.com/bettyguo/realm-retrieve/milestone/3)
+- [ ] [#8](https://github.com/bettyguo/realm-retrieve/issues/8) `feat(retriever):` extract a `Retriever` Protocol (BM25 · SPLADE · custom) — **help wanted**
+
+### v2.0 — *due 2026-09-03* &nbsp; [milestone](https://github.com/bettyguo/realm-retrieve/milestone/4)
+- [ ] [#9](https://github.com/bettyguo/realm-retrieve/issues/9) `research(rsus):` multilingual entity-entropy support (zh / ja / es)
+- [ ] [#10](https://github.com/bettyguo/realm-retrieve/issues/10) `feat(demo):` HuggingFace Space + interactive playground
+
+### Recently shipped (v1.0)
+- [x] [#1](https://github.com/bettyguo/realm-retrieve/issues/1) Hydra `config_path` corrected
+- [x] [#2](https://github.com/bettyguo/realm-retrieve/issues/2) REINFORCE trainer no longer crashes on empty episodes
+- [x] [#3](https://github.com/bettyguo/realm-retrieve/issues/3) Heavy imports are lazy → CPU consumers work out of the box
+- [x] [#4](https://github.com/bettyguo/realm-retrieve/issues/4) Ship the missing `configs/experiments/*.yaml`
+- [x] [#5](https://github.com/bettyguo/realm-retrieve/issues/5) Validate RSUS weights sum to 1
+
+See [all open issues](https://github.com/bettyguo/realm-retrieve/issues) or
+the [v1.1 board](https://github.com/bettyguo/realm-retrieve/milestone/2) — and
+please open an issue if you hit something unexpected.
 
 ---
 
