@@ -59,7 +59,7 @@ dependencies = [
 [project.optional-dependencies]
 # Heavy inference + retrieval stack (Linux + CUDA)
 serve = [
-    "vllm>=0.3,<0.5",
+    "vllm>=0.3,<0.21",
     "colbert-ai>=0.2.19",
     "faiss-gpu==1.7.4 ; platform_system == 'Linux'",
     "ray>=2.9",
