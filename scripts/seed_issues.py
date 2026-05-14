@@ -244,7 +244,25 @@ def push_draft(draft: Draft, taken: dict[str, dict], dry_run: bool) -> None:
         print(f"  DRY create           {draft.title}")
         return
 
-    url = gh(*args)
+    try:
+        url = gh(*args)
+    except RuntimeError as exc:
+        # GitHub returns "Could not resolve to a user or bot with the login 'X'"
+        # if any assignee is not a real GitHub user. Retry once without any
+        # --assignee flags so a typo in the draft doesn't break the whole run.
+        if "Could not resolve to a user" in str(exc) and draft.assignees:
+            bad = ", ".join(draft.assignees)
+            print(f"  !  unknown assignee(s) [{bad}] — retrying without --assignee")
+            args = [a for a in args if a != "--assignee"]
+            # Also drop the values that followed each --assignee in the original args.
+            args = ["issue", "create", "--title", draft.title, "--body", draft.body]
+            for lbl in draft.labels:
+                args += ["--label", lbl]
+            if draft.milestone:
+                args += ["--milestone", draft.milestone]
+            url = gh(*args)
+        else:
+            raise
     print(f"  +  created            {draft.title}\n      → {url}")
     taken[draft.title] = {"number": int(url.rsplit("/", 1)[-1]), "state": "OPEN"}
 

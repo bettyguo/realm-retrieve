@@ -3,7 +3,7 @@ title:    "fix(rsus): silently accept α + β + γ ≠ 1 produces miscalibrated 
 labels:   ["bug", "rsus", "good first issue"]
 milestone: "v1.0"
 state:    closed
-assignees: ["hk950014"]
+assignees: ["bettyguo"]
 opened:   "2026-05-10"
 closed:   "2026-05-12"
 closed_by: "fix(rsus): validate weights sum to 1 at construction (#5)"

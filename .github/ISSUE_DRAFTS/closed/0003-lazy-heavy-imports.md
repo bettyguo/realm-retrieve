@@ -3,7 +3,7 @@ title:    "fix(models): heavy backends (vllm / colbert / spacy) must be lazy-imp
 labels:   ["bug", "imports", "dx"]
 milestone: "v1.0"
 state:    closed
-assignees: ["bettyguo", "hk950014"]
+assignees: ["bettyguo"]
 opened:   "2026-05-02"
 closed:   "2026-05-05"
 closed_by: "fix(models): lazy-load vllm, colbert and spacy at first use (#3)"

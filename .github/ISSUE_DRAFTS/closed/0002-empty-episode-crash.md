@@ -3,7 +3,7 @@ title:    "fix(policy): REINFORCETrainer.train_step crashes on empty episodes"
 labels:   ["bug", "training", "rl"]
 milestone: "v1.0"
 state:    closed
-assignees: ["hk950014"]
+assignees: ["bettyguo"]
 opened:   "2026-04-25"
 closed:   "2026-04-28"
 closed_by: "fix(policy): short-circuit train_step for zero-length rollouts (#2)"
