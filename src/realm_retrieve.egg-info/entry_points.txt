@@ -1,0 +1,3 @@
+[console_scripts]
+realm-quickstart = realm_retrieve.cli:quickstart
+realm-retrieve = realm_retrieve.cli:main

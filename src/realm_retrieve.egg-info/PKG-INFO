@@ -1,0 +1,226 @@
+Metadata-Version: 2.4
+Name: realm-retrieve
+Version: 1.0.0
+Summary: ReaLM-Retrieve: Adaptive retrieval for Large Reasoning Models.
+Author-email: Dongxin Guo <bettyguo@connect.hku.hk>, Jikun Wu <hk950014@connect.hku.hk>, Siu Ming Yiu <smyiu@cs.hku.hk>
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/bettyguo/realm-retrieve
+Project-URL: Repository, https://github.com/bettyguo/realm-retrieve
+Project-URL: Documentation, https://github.com/bettyguo/realm-retrieve#readme
+Project-URL: Issues, https://github.com/bettyguo/realm-retrieve/issues
+Project-URL: Paper, https://doi.org/10.1145/3805712.3809722
+Keywords: retrieval-augmented-generation,rag,large-reasoning-models,reasoning,deepseek-r1,colbert,information-retrieval,reinforcement-learning,multi-hop-qa
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Python: <3.14,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2.2
+Requires-Dist: transformers<5,>=4.37
+Requires-Dist: numpy<2,>=1.26
+Requires-Dist: scipy<2,>=1.12
+Requires-Dist: scikit-learn>=1.4
+Requires-Dist: spacy<4,>=3.7
+Requires-Dist: pytrec-eval>=0.5
+Requires-Dist: datasets>=2.17
+Requires-Dist: hydra-core>=1.3
+Requires-Dist: omegaconf>=2.3
+Requires-Dist: pyyaml>=6
+Requires-Dist: tqdm>=4.66
+Requires-Dist: rich>=13.7
+Requires-Dist: click>=8.1
+Requires-Dist: jsonlines>=4
+Requires-Dist: sentence-transformers>=2.3
+Provides-Extra: serve
+Requires-Dist: vllm<0.5,>=0.3; extra == "serve"
+Requires-Dist: colbert-ai>=0.2.19; extra == "serve"
+Requires-Dist: faiss-gpu==1.7.4; platform_system == "Linux" and extra == "serve"
+Requires-Dist: ray>=2.9; extra == "serve"
+Provides-Extra: api
+Requires-Dist: openai>=1.12; extra == "api"
+Requires-Dist: anthropic>=0.18; extra == "api"
+Provides-Extra: train
+Requires-Dist: stable-baselines3>=2.2; extra == "train"
+Requires-Dist: gymnasium>=0.29; extra == "train"
+Requires-Dist: wandb>=0.16; extra == "train"
+Requires-Dist: tensorboard>=2.15; extra == "train"
+Requires-Dist: accelerate>=0.26; extra == "train"
+Requires-Dist: peft>=0.8; extra == "train"
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4; extra == "dev"
+Requires-Dist: pytest-cov>=4.1; extra == "dev"
+Requires-Dist: pytest-xdist>=3.5; extra == "dev"
+Requires-Dist: black>=24.1; extra == "dev"
+Requires-Dist: isort>=5.13; extra == "dev"
+Requires-Dist: ruff>=0.3; extra == "dev"
+Requires-Dist: mypy>=1.8; extra == "dev"
+Requires-Dist: pre-commit>=3.6; extra == "dev"
+Requires-Dist: ipython>=8.21; extra == "dev"
+Provides-Extra: all
+Requires-Dist: realm-retrieve[api,dev,serve,train]; extra == "all"
+Dynamic: license-file
+
+# ReaLM-Retrieve
+
+### When to Retrieve **During** Reasoning — Adaptive RAG for Large Reasoning Models
+
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg?style=flat-square)](https://github.com/bettyguo/realm-retrieve/blob/main/LICENSE)
+[![Python](https://img.shields.io/badge/python-3.10%20%7C%203.11-blue.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3110/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.2%2B-EE4C2C.svg?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org/)
+
+---
+
+## How it works
+
+```
+                ┌─────────────────────────────────────────┐
+                │             user question               │
+                └──────────────────┬──────────────────────┘
+                                   v
+              ┌────────────────────────────────────────────┐
+              │   Large Reasoning Model (DeepSeek-R1 ...)  │
+              │       generates extended chain-of-thought  │
+              └──────────────────┬─────────────────────────┘
+                                 v
+            1. StepBoundaryClassifier   (boundary detection)
+                                 v
+            2. RSUS  =  a*U_verb + b*U_ent + g*U_cons     <-- per step
+                                 v
+            3. Policy(retrieve | state)  (REINFORCE, lambda-curriculum)
+                    |                          |
+                   skip                     retrieve
+                    |                          v
+                    |              QueryGen -> ColBERTv2/PLAID -> evidence
+                    |                          v
+                    |              ImplicitCompression
+                    |                          v
+                    └────────> RetrievalInjector (KV-cache-aware) ────>
+                                               v
+                                        final answer
+```
+
+---
+
+## Architecture
+
+| Component | File | Description |
+|---|---|---|
+| **Segmenter** | [segmentation.py](src/realm_retrieve/models/segmentation.py) | Transformer splitting reasoning chains into logical steps |
+| **RSUS calculator** | [rsus.py](src/realm_retrieve/models/rsus.py) | Composite uncertainty: U_verb + U_ent + U_cons with learned weights |
+| **Policy network** | [policy.py](src/realm_retrieve/models/policy.py) | 4-layer transformer encoder; binary retrieve/continue decision |
+| **QueryGen** | [query_gen.py](src/realm_retrieve/models/query_gen.py) | Transformer decoder; formulates dense queries from reasoning context |
+| **Proxy MLP** | [proxy_mlp.py](src/realm_retrieve/models/proxy_mlp.py) | MLP for uncertainty estimation on completion-only models |
+| **Retriever** | [retriever.py](src/realm_retrieve/models/retriever.py) | ColBERTv2 + PLAID late-interaction search |
+| **Compression** | [compression.py](src/realm_retrieve/models/compression.py) | Attention-weighted sentence filtering |
+| **Speculative cache** | [speculative_cache.py](src/realm_retrieve/models/speculative_cache.py) | Entity-based parallel pre-fetching |
+| **KV-cache manager** | [kv_cache.py](src/realm_retrieve/models/kv_cache.py) | Prefix-aware evidence injection preserving vLLM KV states |
+| **Injection protocol** | [injection.py](src/realm_retrieve/models/injection.py) | Full injection pipeline |
+| **LRM adapter** | [reasoning_model.py](src/realm_retrieve/models/reasoning_model.py) | Unified API for DeepSeek-R1, QwQ, o1 |
+| **Metrics** | [metrics.py](src/realm_retrieve/evaluation/metrics.py) | EM, F1, Sup-F1, Evi-F1, retrieval quality, efficiency, paired bootstrap |
+
+---
+
+## Project layout
+
+```
+realm-retrieve/
+├── src/realm_retrieve/           # installable package
+│   ├── models/                   #   all model components (see table above)
+│   └── evaluation/               #   QA + retrieval + efficiency + bootstrap metrics
+├── configs/
+│   └── experiments/              #   Hydra configs for training
+├── scripts/
+│   ├── training/                 #   full training scripts (segmenter, policy, proxy MLP, RSUS calibration)
+│   └── evaluation/               #   evaluation pipeline
+├── evaluate.py                   #   quick evaluation entry point
+├── train_segmentation.py         #   segmenter training entry point
+├── train_policy.py               #   policy training entry point
+└── REPRODUCE.md                  #   step-by-step reproduction guide
+```
+
+---
+
+## Quick start
+
+```bash
+# Install
+git clone https://github.com/bettyguo/realm-retrieve.git
+cd realm-retrieve
+pip install -e ".[dev]"
+```
+
+## Training
+
+```bash
+# Step 1: Train step-boundary classifier
+python scripts/training/train_segmenter_full.py \
+    --data data/annotations/nq_train_traces.jsonl \
+    --test_data data/annotations/nq_test_traces.jsonl \
+    --output checkpoints/segmentation/ --seed 42
+
+# Step 2: Train proxy MLP for completion-only models
+python scripts/training/train_proxy_mlp.py \
+    --data data/annotations/nq_train_traces.jsonl \
+    --output checkpoints/proxy_mlp/ --seed 42
+
+# Step 3: Calibrate RSUS weights and thresholds
+python scripts/training/calibrate_rsus.py \
+    --data data/processed/musique/dev.jsonl \
+    --segmenter_checkpoint checkpoints/segmentation/best_model/ \
+    --output rsus_calibration/ --mode all
+
+# Step 4: Train intervention policy + QueryGen via REINFORCE
+python scripts/training/train_policy_full.py \
+    --train_data data/processed/musique/train.jsonl \
+    --dev_data data/processed/musique/dev.jsonl \
+    --segmenter_checkpoint checkpoints/segmentation/best_model/ \
+    --output checkpoints/policy/ --seed 42
+
+# Multi-seed runs (seeds 42, 123, 456)
+python scripts/training/multi_seed_runner.py --component segmenter --seeds 42,123,456
+python scripts/training/multi_seed_runner.py --component policy --seeds 42,123,456
+```
+
+## Evaluation
+
+```bash
+# Evaluate ReaLM-Retrieve on a benchmark
+python evaluate.py dataset=musique
+
+# Full evaluation with all metrics
+python scripts/evaluation/evaluate_full.py \
+    --method realm_retrieve --dataset musique \
+    --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --seed 42
+```
+
+---
+
+## Reproduction
+
+See [REPRODUCE.md](REPRODUCE.md) for the full step-by-step guide covering data download, index construction, training, and evaluation.
+
+---
+
+## Citation
+
+```bibtex
+@inproceedings{realm-retrieve-2026,
+  title     = {When to Retrieve During Reasoning: Adaptive Retrieval for Large Reasoning Models},
+  author    = {Guo, Betty},
+  booktitle = {Proceedings of the 49th International ACM SIGIR Conference
+               on Research and Development in Information Retrieval (SIGIR '26)},
+  year      = {2026},
+  doi       = {10.1145/3805712.3809722}
+}
+```
+
+---
+
+Released under the [Apache 2.0 License](LICENSE).

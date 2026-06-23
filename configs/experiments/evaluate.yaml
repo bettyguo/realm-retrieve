@@ -1,0 +1,44 @@
+# Hydra config for evaluation with the full ReaLM-Retrieve pipeline.
+#
+# Usage: python evaluate.py dataset=musique
+
+defaults:
+  - _self_
+
+dataset: musique
+seed: 42
+
+model:
+  embedding_dim: 768
+  segmentation_checkpoint: checkpoints/segmentation/best_model/
+  policy_checkpoint: checkpoints/policy/best_model.pt
+  querygen_checkpoint: null
+  reasoning_model_type: vllm
+  reasoning_model_name: deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
+  tensor_parallel_size: 8
+
+retrieval:
+  index_path: data/indices/colbert/${dataset}.plaid
+  checkpoint: colbert-ir/colbertv2.0
+  k: 5
+
+rsus:
+  alpha: 0.40
+  beta: 0.35
+  gamma: 0.25
+  entity_retriever_index: null
+
+policy:
+  threshold: 0.65
+
+integration:
+  compression_tau_rel: 0.45
+  speculative_similarity_threshold: 0.85
+
+data:
+  test_path: data/processed/${dataset}/dev.jsonl
+
+eval:
+  max_examples: null
+
+output_dir: outputs/results/
